@@ -1,19 +1,47 @@
 package nls.formacao.matriculador;
 
 import java.util.Objects;
+import java.util.logging.Logger;
 
+/**
+ * 
+ * @author lterreiro
+ */
 public class Endereco {
 
+    /**
+     * 
+     */
     private String rua;
 
+    /**
+     * 
+     */
     private String codPostal;
 
+    /**
+     * 
+     */
     private String localidade;
 
+    /**
+     * 
+     */
     private String lote;
 
+    /**
+     * 
+     */
     private String andar;
-
+    
+    /**
+     * 
+     */
+    private static final Logger LOG = Logger.getLogger(Endereco.class.getName());
+    
+    /**
+     * 
+     */
     public Endereco() {
         super();
         this.rua = "";
@@ -23,6 +51,14 @@ public class Endereco {
         this.andar = "";
     }
 
+    /**
+     * 
+     * @param rua
+     * @param lote
+     * @param andar
+     * @param codPostal
+     * @param localidade 
+     */
     public Endereco(String rua, String lote, String andar, String codPostal, String localidade) {
         this();
         this.rua = rua;

@@ -1,26 +1,120 @@
 package nls.formacao.matriculador;
 
-public class Matricula
-{
-        /**
-         * identificador univoco de uma matricula.
-         * Possui o formato          */
-	private String id;
+import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
+import java.util.Objects;
+import java.util.logging.Logger;
 
-	/**
-	 * <p>Codigo do empregado que efetuou o registo.</p>
-	 */
-	private int codEmp;
-        
-	public Matricula(){
-		super();
-	}
+public class Matricula {
+    
+    /**
+     * separador do formato da matricula
+     */
+    private static final String SEPARADOR = "/";
+    
+    /**
+     * identificador univoco de uma matricula.
+     * O identificador é gerado internamente, sendo 
+     * composto pelo prefixo do curso, codigo empregado e um numero aleatório.
+     */
+    private String id;
 
-    public Matricula(String id, int codEmp, Registo registo) {
-        this.id = id;
+    /**
+     * Codigo do empregado que efetuou o registo.
+     */
+    private int codEmp;
+
+    /**
+     * curso da matricula.
+     */
+    private String curso;
+    
+    /**
+     * LOGGER
+     */
+    private static final Logger LOG = Logger.getLogger(Matricula.class.getName());
+
+    /**
+     * 
+     * @param curso
+     * @param codEmp
+     * @throws NoSuchAlgorithmException 
+     */
+    public Matricula(String curso, int codEmp) throws NoSuchAlgorithmException {
         this.codEmp = codEmp;
+        this.curso = curso;
+        this.id = genRanId();
     }
 
-        
-}
+    public String getId() {
+        return id;
+    }
 
+    public int getCodEmp() {
+        return codEmp;
+    }
+
+    public String getCurso() {
+        return curso;
+    }
+    
+    /**
+     * 
+     * @return
+     * @throws NoSuchAlgorithmException 
+     */
+    private String genRanId() throws NoSuchAlgorithmException {
+        SecureRandom prng = SecureRandom.getInstance("SHA1PRNG");
+        //generate a random number
+        return Integer.toString(Math.abs(prng.nextInt()));
+    }
+
+    public String getMatricula() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(this.curso).append(SEPARADOR)
+          .append(this.codEmp).append(SEPARADOR)
+          .append(this.id);
+        return sb.toString();
+    }
+
+    @Override
+    public String toString() {
+        return "Matricula{" + "id=" + id + ", codEmp=" + codEmp + ", curso=" + curso + '}';
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 31 * hash + Objects.hashCode(this.id);
+        hash = 31 * hash + this.codEmp;
+        hash = 31 * hash + Objects.hashCode(this.curso);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Matricula other = (Matricula) obj;
+        if (this.codEmp != other.codEmp) {
+            return false;
+        }
+        if (!Objects.equals(this.id, other.id)) {
+            return false;
+        }
+        if (!Objects.equals(this.curso, other.curso)) {
+            return false;
+        }
+        return true;
+    }
+
+    
+    
+}
