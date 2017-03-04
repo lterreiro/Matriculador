@@ -119,7 +119,7 @@ public class Registo {
 
     @Override
     public String toString() {
-        return "Registo{" + "matricula=" + matricula + ", nome=" + nome + ", dataNascimento=" + dataNascimento + ", endereco=" + endereco + ", email=" + email + ", df=" + df + '}';
+        return "Registo{" + "matricula=" + matricula + ", nome=" + nome + ", dataNascimento=" + dataNascimento + ", endereco=" + endereco + ", email=" + email + '}';
     }
 
     @Override

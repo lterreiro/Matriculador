@@ -7,57 +7,54 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- * <!-- begin-user-doc -->
- * <!--  end-user-doc  --> @generated
+ * 
  */
 public class Matriculador {
 
     /**
-     * <!-- begin-user-doc -->
-     * <!--  end-user-doc  --> @generated @ordered
+     *
      */
-
-    public Set<Registo> registo;
+    private Registo[] registo;
+    
+    /**
+     * 
+     */
+    private DesCarregador descarregador;
 
     /**
-     * <!-- begin-user-doc -->
-     * <!--  end-user-doc  --> @generated
+     * 
      */
     public Matriculador() {
         super();
+        registo = new Registo[50];
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!--  end-user-doc  --> @generated @ordered
+     * 
      */
-    public List<Registo> listar() {
+    public void listar() {
         // TODO implement me
-        return null;
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!--  end-user-doc  --> @generated @ordered
+     * 
      */
     public void inserir(Registo registo) {
         // TODO implement me
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!--  end-user-doc  --> @generated @ordered
+     * 
      */
-    public List<Registo> pesquisar() {
+    public Registo pesquisar(String id) {
         // TODO implement me
         return null;
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!--  end-user-doc  --> @generated @ordered
+     * 
      */
-    public void descarregar(Descarregador descarregador) {
+    public void descarregar() {
         // TODO implement me
     }
 

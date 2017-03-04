@@ -3,6 +3,7 @@ package nls.formacao.matriculador;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.util.Objects;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Matricula {
@@ -40,10 +41,15 @@ public class Matricula {
      * @param codEmp
      * @throws NoSuchAlgorithmException 
      */
-    public Matricula(String curso, int codEmp) throws NoSuchAlgorithmException {
+    public Matricula(String curso, int codEmp) {
         this.codEmp = codEmp;
         this.curso = curso;
-        this.id = genRanId();
+        try {
+            this.id = genRanId();
+        } catch (NoSuchAlgorithmException ex) {
+            Logger.getLogger(Matricula.class.getName()).log(Level.SEVERE, null, ex);
+            throw new RuntimeException("Erro a criar matricula", ex);
+        }
     }
 
     public String getId() {
