@@ -5,6 +5,9 @@
  */
 package nls.formacao.matriculador;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.Scanner;
 import java.util.logging.ConsoleHandler;
 import java.util.logging.Handler;
@@ -37,6 +40,7 @@ public class Menu {
             switch (opcao.toUpperCase()) {
                 case "A":
                     inserirRegistos();
+                    break;
                 case "I":
                     inserir();
                     break;
@@ -97,7 +101,7 @@ public class Menu {
      * 
      */
     private static void listar() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        System.out.println(matriculador.listar());
     }
 
     /**
@@ -126,6 +130,12 @@ public class Menu {
      * 
      */
     private static void inserirRegistos() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        Date d = Calendar.getInstance().getTime();
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-mm-yyyy");
+        matriculador.inserir(new Registo(new Matricula("LEIC", 1), new Nome("John", "Middle", "Doe"), d, new Endereco("Rua Sesamo", "220", "8º", "1000-100", "Lisboa"), "john.doe@acme.com", sdf));
+        matriculador.inserir(new Registo(new Matricula("LEIC", 1), new Nome("Lenny", "Kravitz"), d, new Endereco("Rua Sesamo", "220", "8º", "1000-100", "Lisboa"), "john.doe@acme.com", sdf));
+        matriculador.inserir(new Registo(new Matricula("LEEC", 2), new Nome("Britney", "Middle", "Spears"), d, new Endereco("Rua Sesamo", "220", "8º", "1000-100", "Lisboa"), "john.doe@acme.com", sdf));
+        matriculador.inserir(new Registo(new Matricula("LEEC", 1), new Nome("John", "Middle", "Doe"), d, new Endereco("Rua Sesamo", "220", "8º", "1000-100", "Lisboa"), "john.doe@acme.com", sdf));
+        matriculador.inserir(new Registo(new Matricula("LEIC", 2), new Nome("John", "Middle", "Doe"), d, new Endereco("Rua Sesamo", "220", "8º", "1000-100", "Lisboa"), "john.doe@acme.com", sdf));
     }
 }

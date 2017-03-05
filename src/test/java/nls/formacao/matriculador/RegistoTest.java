@@ -128,7 +128,7 @@ public class RegistoTest {
     }
 
     /**
-     * Test of getEndereco method, of class Registo.
+     * Test of enderecoCompleto method, of class Registo.
      */
     @Test
     public void testGetEndereco() {

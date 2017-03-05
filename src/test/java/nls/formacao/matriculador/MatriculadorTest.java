@@ -141,4 +141,12 @@ public class MatriculadorTest {
         assertEquals(expResult, result);
     }
     
+    @Test
+    public void testOverInsertion(){
+        Matriculador instance = new Matriculador(2);
+        assertTrue(instance.inserir(new Registo()));
+        assertTrue(instance.inserir(new Registo()));
+        assertFalse(instance.inserir(new Registo()));
+        
+    }
 }

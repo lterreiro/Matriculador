@@ -207,6 +207,6 @@ public class EnderecoTest {
         final String expLocalidade = "Lisboa";
         final String expEndereco = String.format("%s %s %s %s %s", expRua, expLote, expAndar, expCodPostal, expLocalidade);
         Endereco instance = new Endereco(expRua, expLote, expAndar, expCodPostal, expLocalidade);
-        assertEquals(expEndereco, instance.getEndereco());   
+        assertEquals(expEndereco, instance.enderecoCompleto());   
     }
 }

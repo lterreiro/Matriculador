@@ -34,37 +34,66 @@ public class Matriculador {
         registo = new Registo[MAX_MATRICULAS];
         Arrays.fill(registo, null);
     }
-
+    
     /**
-     * 
+     * @param size numero maximo de matriculas.
      */
-    public void listar() {
-        // TODO implement me
+    public Matriculador(int size) {
+        super();
+        registo = new Registo[size];
+        Arrays.fill(registo, null);
     }
 
     /**
      * 
      */
-    public void inserir(Registo reg) {
-        if(registo == null){
-            LOG.log(Level.WARNING, "Registo inválido. Não inserido.");
-            return;
+    public String listar() {
+        StringBuilder sb = new StringBuilder("Listagem de matriculas\n");
+        for (Registo r : registo) {
+            if(r != null){
+                sb.append(r.prettyPrint());
+            }
         }
+        LOG.log(Level.FINE, "Listagem terminada");
+        return sb.toString();
+    }
+
+    /**
+     * Insere um registo na coleção de matriculas.
+     * @param reg registo a inserir.
+     */
+    public boolean inserir(Registo reg) {
+        if(reg == null){
+            LOG.log(Level.WARNING, "Registo inválido. Não inserido.");
+            return false;
+        }
+        boolean inserido = false;
         for (int i = 0; i < registo.length; i++) {
             if(registo[i] == null){
                 registo[i] = reg;
                 LOG.log(Level.INFO, "Registo inserido com sucesso.");
+                inserido = true;
                 break;
             }
         }
+        if(!inserido){
+            System.err.println("Registo não foi inserido. Não foi encontrado espaço.");
+            LOG.log(Level.SEVERE, "Não foi possível inserir o registo.");
+            return false;
+        }
+        LOG.log(Level.FINE, "Registo inserido.");
+        return true;
     }
 
     /**
      * 
      */
     public Registo pesquisar(String id) {
-        // TODO implement me
-        return null;
+        
+        for (Registo registo1 : registo) {
+            
+            
+        }
     }
 
     /**

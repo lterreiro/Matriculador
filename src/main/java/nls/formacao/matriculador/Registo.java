@@ -116,6 +116,23 @@ public class Registo {
     public String getDataNascimentoStr() {
         return df.format(dataNascimento);
     }
+    
+    /**
+     * 
+     * @return 
+     */
+    public String prettyPrint(){
+        StringBuilder sb = new StringBuilder();
+        sb.append("==============================================\n");
+        sb.append("Nome: ").append(this.getNome().nomeCompleto()).append("\n");
+        sb.append("Endereço: ").append(this.getEndereco().enderecoCompleto()).append("\n");
+        sb.append("Data Nascimento: ").append(this.getDataNascimentoStr()).append("\n");
+        sb.append("Email: ").append(this.getEmail()).append("\n");
+        sb.append("Matricula: ").append(this.getMatricula().getMatricula()).append("\n");
+        sb.append("==============================================\n");
+        
+        return sb.toString();
+    }
 
     @Override
     public String toString() {

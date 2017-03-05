@@ -4,43 +4,43 @@ import java.util.Objects;
 import java.util.logging.Logger;
 
 /**
- * 
+ *
  * @author lterreiro
  */
 public class Endereco {
 
     /**
-     * 
+     *
      */
     private String rua;
 
     /**
-     * 
+     *
      */
     private String codPostal;
 
     /**
-     * 
+     *
      */
     private String localidade;
 
     /**
-     * 
+     *
      */
     private String lote;
 
     /**
-     * 
+     *
      */
     private String andar;
-    
+
     /**
-     * 
+     *
      */
     private static final Logger LOG = Logger.getLogger(Endereco.class.getName());
-    
+
     /**
-     * 
+     *
      */
     public Endereco() {
         super();
@@ -52,12 +52,12 @@ public class Endereco {
     }
 
     /**
-     * 
+     *
      * @param rua
      * @param lote
      * @param andar
      * @param codPostal
-     * @param localidade 
+     * @param localidade
      */
     public Endereco(String rua, String lote, String andar, String codPostal, String localidade) {
         this();
@@ -151,32 +151,31 @@ public class Endereco {
 
     /**
      * Forma e retorna um endereço completo.
-     * @return 
-     * String com o endereço completo.
+     *
+     * @return String com o endereço completo.
      */
-    public String getEndereco(){
+    public String enderecoCompleto() {
         StringBuilder sb = new StringBuilder();
-        if(getRua() != null){
+        if (getRua() != null) {
             sb.append(getRua());
         }
-        
-        if(getLote() != null){
+
+        if (getLote() != null) {
             sb.append(" ").append(getLote());
         }
-        
-        if(getAndar()!= null){
+
+        if (getAndar() != null) {
             sb.append(" ").append(getAndar());
         }
-        
-        if(getCodPostal() != null){
+
+        if (getCodPostal() != null) {
             sb.append(" ").append(getCodPostal());
         }
-        
-        if(getLocalidade() != null)
-        {
+
+        if (getLocalidade() != null) {
             sb.append(" ").append(getLocalidade());
         }
-        
+
         return sb.toString();
     }
 }

@@ -75,6 +75,10 @@ public class Matricula {
         return Integer.toString(Math.abs(prng.nextInt()));
     }
 
+    /**
+     * Indica o código da matrícula criado.
+     * @return String representando a matrícula.
+     */
     public String getMatricula() {
         StringBuilder sb = new StringBuilder();
         sb.append(this.curso).append(SEPARADOR)
