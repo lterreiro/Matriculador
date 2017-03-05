@@ -25,13 +25,18 @@ public class Menu {
     public static void main(String[] args) {
         Handler consoleHandler = new ConsoleHandler();
         consoleHandler.setLevel(Level.FINE);
+        LOG.setLevel(Level.FINE);
         LOG.addHandler(consoleHandler);
         Scanner sc = new Scanner(System.in);
         String opcao;
+        System.out.println("Bem vindo à aplicação de matriculação de alunos!");
         do {
-            System.out.println("Selecione uma opção: (I)nserir; (L)istar; (P)esquisar; (D)escarregar; (S)air");
+            System.out.printf("Estão matriculados %d alunos em %d possiveis.\n", matriculador.numMatriculados(), Matriculador.MAX_MATRICULAS);
+            System.out.println("Selecione uma opção: (A)uto Inserir; (I)nserir; (L)istar; (P)esquisar; (D)escarregar; (S)air");
             opcao = sc.nextLine();
-            switch (opcao) {
+            switch (opcao.toUpperCase()) {
+                case "A":
+                    inserirRegistos();
                 case "I":
                     inserir();
                     break;
@@ -53,34 +58,74 @@ public class Menu {
         } while (true);
     }
 
-
+    /**
+     * 
+     */
     private static void inserir() {
-        Registo registo = null;
         Scanner sc = new Scanner(System.in);
         UserInput ui = new UserInput(sc);
+        Registo registo = new Registo();
         //nome
         Nome nome = new Nome();
-        nome.setPrimeiro(ui.askInputString("Indique o primeiro nome :"));
-        nome.setMeio(ui.askInputString("Indique o nome do meio:"));
-        nome.setUltimo(ui.askInputString("Indique o último nome :"));
-        LOG.log(Level.FINE, "Nome introduzido: {0}", nome.toString());
+        nome.setPrimeiro(ui.askInputString("Indique o primeiro nome : "));
+        nome.setMeio(ui.askInputString("Indique o nome do meio: "));
+        nome.setUltimo(ui.askInputString("Indique o último nome : "));
+        registo.setNome(nome);
+        //endereco
+        Endereco endereco = new Endereco();
+        endereco.setRua(ui.askInputString("Indique a rua: "));
+        endereco.setLote(ui.askInputString("Indique o lote: "));
+        endereco.setAndar(ui.askInputString("Indique o andar: "));
+        endereco.setCodPostal(ui.askInputCodPostal("Indique o código postal (NNNN-NNN): "));
+        endereco.setLocalidade(ui.askInputString("Indique a Localidade: "));
+        registo.setEndereco(endereco);
+        //matricula
+        String curso = ui.askInputString("Indique o curso: ");
+        int codEmp = 1; 
+        Matricula matricula = new Matricula(curso, codEmp);
+        registo.setMatricula(matricula);
+        //email
+        registo.setEmail(ui.askInputEmail("Indique o email: "));
+        //data nascimento
+        registo.setDataNascimento(ui.askInputDateWithFormat("Indique a data nascimento: ", Registo.FORMATO_DATA));
+        LOG.log(Level.FINE, "Registo introduzido: {0}", registo.toString());
         matriculador.inserir(registo);
+        System.out.println("Registo inserido com sucesso.");
     }
 
+    /**
+     * 
+     */
     private static void listar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
+    /**
+     * 
+     */
     private static void pesquisar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
+    /**
+     * 
+     */
     private static void descarregar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException("Not supported yet.");
     }
     
+    /**
+     * 
+     */
     private static void sair() {
         System.out.println("Obrigado por utilizar a aplicação. Adeus.");
         System.exit(0);
+    }
+
+    /**
+     * 
+     */
+    private static void inserirRegistos() {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 }

@@ -22,16 +22,19 @@ import java.util.logging.Logger;
  */
 public class UserInput {
 
-    private static Scanner keyboard;
+    private Scanner keyboard;
+    
+    private static final Logger LOG = Logger.getLogger(UserInput.class.getName());
+    
 
-    public UserInput(){
+    public UserInput() {
         keyboard = new Scanner(System.in);
     }
-    
-    public UserInput(Scanner sc){
+
+    public UserInput(Scanner sc) {
         keyboard = sc;
     }
-    
+
     /**
      * A method to repeatedly ask the user for input until the input is valid.
      * If condition is used, input is measured against it.
@@ -46,7 +49,7 @@ public class UserInput {
             System.out.print(informationText);
             userInp = keyboard.nextLine();
             if ("".equals(userInp)) {
-                System.err.println("Erro: Deve ser introduzido um.");
+                System.err.println("Erro: Deve ser introduzido um valor.");
                 error = true;
             } else {
                 error = false;
@@ -54,7 +57,7 @@ public class UserInput {
         } while (error == true);
         return userInp;
     }
-    
+
     /**
      * A method to repeatedly ask the user for input until the input is valid.
      * If condition is used, input is measured against it.
@@ -128,6 +131,52 @@ public class UserInput {
     }
     
     /**
+     * 
+     * @param informationText
+     * @return 
+     */
+    public String askInputEmail(String informationText) {
+        Boolean error = false;
+        String userInp = "";
+        do {
+            System.out.print(informationText);
+            userInp = keyboard.nextLine();
+            // validate:
+            if (!isValidEmailAddress(userInp)){
+                System.err.println("Erro: Deve ser introduzido um email válido.");
+                error = true;
+            } else {
+                error = false;
+            }
+
+        } while (error == true);
+        return userInp;
+    }
+    
+    /**
+     * 
+     * @param informationText
+     * @return 
+     */
+    public String askInputCodPostal(String informationText) {
+        Boolean error = false;
+        String userInp = "";
+        do {
+            System.out.print(informationText);
+            userInp = keyboard.nextLine();
+            // validate:
+            if (!isValidCodPostal(userInp)){
+                System.err.println("Erro: Deve ser introduzido um código postal válido.");
+                error = true;
+            } else {
+                error = false;
+            }
+
+        } while (error == true);
+        return userInp;
+    }
+
+    /**
      * A method to repeatedly ask the user for input until the input is valid.
      * If condition is used, input is measured against it.
      *
@@ -139,26 +188,27 @@ public class UserInput {
         Boolean error = false;
         String userInp = "";
         SimpleDateFormat sdf = new SimpleDateFormat(format);
+        Date d = null;
         do {
             System.out.print(informationText);
             userInp = keyboard.nextLine();
-            
+
             try {
-                sdf.parse(userInp);
+                d = sdf.parse(userInp);
+                if(!userInp.equals(sdf.format(d))){
+                    error = true;
+                    LOG.log(Level.SEVERE, "data inválida.");
+                    System.err.printf("Data introduzida inválida. Formato esperado '%s'.\n\n", format);
+                }else{
+                    error = false;
+                }
             } catch (ParseException ex) {
-                Logger.getLogger(UserInput.class.getName()).log(Level.SEVERE, null, ex);
+                LOG.log(Level.SEVERE, null, ex);
                 error = true;
-                System.err.printf("Erro: Deve ser introduzido uma data com o formato '%s'.\n", format);
+                System.err.printf("Erro: Deve ser introduzido uma data com o formato '%s'.\n\n", format);
             }
         } while (error == true);
-        Date d = null;
-        try {
-            d = sdf.parse(userInp);
-        } catch (ParseException ex) {
-            Logger.getLogger(UserInput.class.getName()).log(Level.SEVERE, null, ex);
-            System.err.println("Erro a obter data.");
-            d = null;
-        }
+        
         return d;
     }
 
@@ -184,7 +234,30 @@ public class UserInput {
         } catch (Exception e) {
             return false;
         }
+    }
 
+    /**
+     * Indica se o email é sintaticamente válido. Nada infere quanto à existencia do mesmo.
+     * @param email email a testar
+     * @return true se válido. false caso contrário.
+     */
+    public boolean isValidEmailAddress(String email) {
+        String ePattern = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$";
+        java.util.regex.Pattern p = java.util.regex.Pattern.compile(ePattern);
+        java.util.regex.Matcher m = p.matcher(email);
+        return m.matches();
+    }
+    
+    /**
+     * Valida um código postal no formato NNNN-NNN.
+     * @param codPostal codigo postal a testar
+     * @return true se válido. false caso contrário.
+     */
+    public boolean isValidCodPostal(String codPostal) {
+        String ePattern = "^\\d{4}\\-\\d{3}$";
+        java.util.regex.Pattern p = java.util.regex.Pattern.compile(ePattern);
+        java.util.regex.Matcher m = p.matcher(codPostal);
+        return m.matches();
     }
 
 }
