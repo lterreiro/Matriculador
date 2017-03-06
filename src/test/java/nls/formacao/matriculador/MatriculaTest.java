@@ -47,12 +47,8 @@ public class MatriculaTest {
     public void testGetId() {
 
         Matricula instance = null;
-        try {
-            instance = new Matricula("LEIC", 1);
-        } catch (NoSuchAlgorithmException ex) {
-            Logger.getLogger(MatriculaTest.class.getName()).log(Level.SEVERE, null, ex);
-            fail();
-        }
+        instance = new Matricula("LEIC", 1);
+        
         assertNotNull(instance);
         String expResult = "";
         String result = instance.getId();
@@ -71,12 +67,7 @@ public class MatriculaTest {
     @org.junit.Test
     public void testGetCodEmp() {
         Matricula instance = null;
-        try {
-            instance = new Matricula("LEIC", 1);
-        } catch (NoSuchAlgorithmException ex) {
-            Logger.getLogger(MatriculaTest.class.getName()).log(Level.SEVERE, null, ex);
-            fail();
-        }
+        instance = new Matricula("LEIC", 1);
         assertNotNull(instance);
         int expResult = 1;
         int result = instance.getCodEmp();
@@ -89,12 +80,7 @@ public class MatriculaTest {
     @org.junit.Test
     public void testGetCurso() {
         Matricula instance = null;
-        try {
-            instance = new Matricula("LEIC", 1);
-        } catch (NoSuchAlgorithmException ex) {
-            Logger.getLogger(MatriculaTest.class.getName()).log(Level.SEVERE, null, ex);
-            fail();
-        }
+        instance = new Matricula("LEIC", 1);
         assertNotNull(instance);
         String expResult = "LEIC";
         String result = instance.getCurso();
@@ -107,12 +93,7 @@ public class MatriculaTest {
     @org.junit.Test
     public void testGetMatricula() {
         Matricula instance = null;
-        try {
-            instance = new Matricula("LEIC", 1);
-        } catch (NoSuchAlgorithmException ex) {
-            Logger.getLogger(MatriculaTest.class.getName()).log(Level.SEVERE, null, ex);
-            fail();
-        }
+        instance = new Matricula("LEIC", 1);
         assertNotNull(instance);
         String expResult = instance.getCurso() + "/" + instance.getCodEmp() + "/" + instance.getId();
         String result = instance.getMatricula();

@@ -99,7 +99,6 @@ public class MatriculadorTest {
      */
     @Test
     public void testPesquisar() {
-        String id = "LEIC";
         Matriculador instance = new Matriculador();
         SimpleDateFormat sdf = new SimpleDateFormat("dd-mm-yyyy");
         Date d = null;
@@ -110,6 +109,7 @@ public class MatriculadorTest {
             fail();
         }
         Registo expResult = new Registo(new Matricula("LEIC", 1), new Nome("John", "Middle", "Doe"), d, new Endereco("Rua Sesamo", "220", "8º", "1000-100", "Lisboa"), "john.doe@acme.com", sdf);
+        String id = expResult.getMatricula().getId();
         instance.inserir(expResult);
         Registo result = instance.pesquisar(id);
         assertEquals(expResult, result);
@@ -123,8 +123,6 @@ public class MatriculadorTest {
         System.out.println("descarregar");
         Matriculador instance = new Matriculador();
         instance.descarregar();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**

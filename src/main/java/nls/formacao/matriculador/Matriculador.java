@@ -45,7 +45,8 @@ public class Matriculador {
     }
 
     /**
-     * 
+     * Lista os registos existentes no matriculador.
+     * @return String com a informacao das matriculas.
      */
     public String listar() {
         StringBuilder sb = new StringBuilder("Listagem de matriculas\n");
@@ -61,6 +62,7 @@ public class Matriculador {
     /**
      * Insere um registo na coleção de matriculas.
      * @param reg registo a inserir.
+     * @return true se insere, false se não insere.
      */
     public boolean inserir(Registo reg) {
         if(reg == null){
@@ -86,18 +88,23 @@ public class Matriculador {
     }
 
     /**
-     * 
+     * Pesquisa uma matricula no registo de matriculas.
+     * @param id Identificador da matrícula a pesquisar.
+     * @return instancia de {@link Registo} se encontrada. Null caso contrário.
      */
     public Registo pesquisar(String id) {
-        
-        for (Registo registo1 : registo) {
-            
-            
+        for (Registo reg : registo) {
+            if(reg != null && reg.getMatricula().getId().equals(id)){
+                LOG.log(Level.FINE, String.format("Registo encontrado para id %s.", id));
+                return reg;
+            } 
         }
+        LOG.log(Level.FINE, "Registo não encontrado.");
+        return null;
     }
 
     /**
-     * 
+     * Descarrega a informacao para determinado meio.
      */
     public void descarregar() {
         // TODO implement me

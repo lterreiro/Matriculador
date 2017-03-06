@@ -108,14 +108,17 @@ public class Menu {
      * 
      */
     private static void pesquisar() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        Scanner sc = new Scanner(System.in);
+        UserInput ui = new UserInput(sc);
+        String id = Integer.toString(ui.askInputInt("Indique o id a pesquisar: "));
+        matriculador.pesquisar(id)
     }
 
     /**
      * 
      */
     private static void descarregar() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        matriculador.descarregar();
     }
     
     /**
