@@ -10,6 +10,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import nls.formacao.matriculador.descarregador.DesCarregadorEcra;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -122,7 +123,7 @@ public class MatriculadorTest {
     public void testDescarregar() {
         System.out.println("descarregar");
         Matriculador instance = new Matriculador();
-        instance.descarregar();
+        instance.descarregar(new DesCarregadorEcra());
     }
 
     /**

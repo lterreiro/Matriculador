@@ -3,10 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package nls.formacao.matriculador;
+package nls.formacao.matriculador.descarregador;
 
 import java.io.IOException;
-import static java.lang.Math.random;
 import java.math.BigInteger;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
@@ -15,16 +14,17 @@ import java.nio.file.Paths;
 import java.security.SecureRandom;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import nls.formacao.matriculador.Registo;
 
 /**
  *
  * @author Formação
  */
-public class DescarregarFicheiro implements DesCarregador {
+public class DesCarregadorFicheiro implements DesCarregador {
 
     private final SecureRandom random = new SecureRandom();
     
-    private static final Logger LOG = Logger.getLogger(DescarregarFicheiro.class.getName());
+    private static final Logger LOG = Logger.getLogger(DesCarregadorFicheiro.class.getName());
     
     @Override
     public void escrever(String info) {
@@ -43,6 +43,9 @@ public class DescarregarFicheiro implements DesCarregador {
     public void escrever(Registo[] info) {
         String nome = obtemNomeFicheiro();
         for (Registo registo : info) {
+            if(registo == null){
+                continue;
+            }
             try {
                 Path p = Paths.get(nome);
                 Files.write(p, registo.prettyPrint().getBytes(Charset.forName("UTF-8")));

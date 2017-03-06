@@ -5,14 +5,21 @@
  */
 package nls.formacao.matriculador;
 
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Scanner;
 import java.util.logging.ConsoleHandler;
+import java.util.logging.FileHandler;
 import java.util.logging.Handler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.logging.SimpleFormatter;
+import nls.formacao.matriculador.descarregador.DesCarregador;
+import nls.formacao.matriculador.descarregador.DesCarregadorExcel;
+import nls.formacao.matriculador.descarregador.DesCarregadorEcra;
+import nls.formacao.matriculador.descarregador.DesCarregadorFicheiro;
 
 /**
  *
@@ -20,21 +27,33 @@ import java.util.logging.Logger;
  */
 public class Menu {
 
-    private final static Matriculador matriculador = new Matriculador();
+    private final static Matriculador MATRICULADOR = new Matriculador();
     
-    private static final Logger LOG = Logger.getLogger(Menu.class.getName());
+    private static final Logger LOG = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
    
     
     public static void main(String[] args) {
-        Handler consoleHandler = new ConsoleHandler();
-        consoleHandler.setLevel(Level.FINE);
+        Handler handler = null;
+        try {
+            //handler = new ConsoleHandler();
+            handler = new FileHandler("log.txt");
+            handler.setFormatter(new SimpleFormatter());
+        } catch (IOException | SecurityException ex) {
+            LOG.log(Level.SEVERE, "Erro a definir file handler", ex);
+            System.err.println("Erro a configurar logger. A sair.");
+            System.exit(1);
+        }
+
+        handler.setLevel(Level.FINE);
         LOG.setLevel(Level.FINE);
-        LOG.addHandler(consoleHandler);
+        LOG.addHandler(handler);
+        LOG.setUseParentHandlers(false);
         Scanner sc = new Scanner(System.in);
         String opcao;
         System.out.println("Bem vindo à aplicação de matriculação de alunos!");
+        LOG.info("START");
         do {
-            System.out.printf("Estão matriculados %d alunos em %d possiveis.\n", matriculador.numMatriculados(), Matriculador.MAX_MATRICULAS);
+            System.out.printf("Estão matriculados %d alunos em %d possiveis.\n", MATRICULADOR.numMatriculados(), Matriculador.MAX_MATRICULAS);
             System.out.println("Selecione uma opção: (A)uto Inserir; (I)nserir; (L)istar; (P)esquisar; (D)escarregar; (S)air");
             opcao = sc.nextLine();
             switch (opcao.toUpperCase()) {
@@ -93,7 +112,7 @@ public class Menu {
         //data nascimento
         registo.setDataNascimento(ui.askInputDateWithFormat("Indique a data nascimento: ", Registo.FORMATO_DATA));
         LOG.log(Level.FINE, "Registo introduzido: {0}", registo.toString());
-        matriculador.inserir(registo);
+        MATRICULADOR.inserir(registo);
         System.out.println("Registo inserido com sucesso.");
     }
 
@@ -101,7 +120,7 @@ public class Menu {
      * 
      */
     private static void listar() {
-        System.out.println(matriculador.listar());
+        System.out.println(MATRICULADOR.listar());
     }
 
     /**
@@ -111,14 +130,40 @@ public class Menu {
         Scanner sc = new Scanner(System.in);
         UserInput ui = new UserInput(sc);
         String id = Integer.toString(ui.askInputInt("Indique o id a pesquisar: "));
-        matriculador.pesquisar(id)
+        MATRICULADOR.pesquisar(id);
     }
 
     /**
      * 
      */
     private static void descarregar() {
-        matriculador.descarregar();
+        DesCarregador descarregador = null;
+        Scanner sc = new Scanner(System.in);
+        do {
+            System.out.println("Selecione uma opção de descarregamento: (E)crã; Ficheirob(T)XT; Ficheiro (X)LS; (V)oltar;");
+            String opcao = sc.nextLine();
+            switch(opcao){
+                case "E":
+                    descarregador = new DesCarregadorEcra();
+                    break;
+                case "T":
+                    descarregador = new DesCarregadorFicheiro();
+                    break;
+                case "X":
+                    descarregador = new DesCarregadorExcel();
+                    break;
+                case "V":
+                    return;
+                default:
+                    descarregador = null;
+                    System.err.println("Opção inválida");
+            }
+            if(descarregador != null){
+                LOG.log(Level.FINE, "A escrever informação");
+                MATRICULADOR.descarregar(descarregador);
+            }
+        } while (true);
+        
     }
     
     /**
@@ -135,10 +180,10 @@ public class Menu {
     private static void inserirRegistos() {
         Date d = Calendar.getInstance().getTime();
         SimpleDateFormat sdf = new SimpleDateFormat("dd-mm-yyyy");
-        matriculador.inserir(new Registo(new Matricula("LEIC", 1), new Nome("John", "Middle", "Doe"), d, new Endereco("Rua Sesamo", "220", "8º", "1000-100", "Lisboa"), "john.doe@acme.com", sdf));
-        matriculador.inserir(new Registo(new Matricula("LEIC", 1), new Nome("Lenny", "Kravitz"), d, new Endereco("Rua Sesamo", "220", "8º", "1000-100", "Lisboa"), "john.doe@acme.com", sdf));
-        matriculador.inserir(new Registo(new Matricula("LEEC", 2), new Nome("Britney", "Middle", "Spears"), d, new Endereco("Rua Sesamo", "220", "8º", "1000-100", "Lisboa"), "john.doe@acme.com", sdf));
-        matriculador.inserir(new Registo(new Matricula("LEEC", 1), new Nome("John", "Middle", "Doe"), d, new Endereco("Rua Sesamo", "220", "8º", "1000-100", "Lisboa"), "john.doe@acme.com", sdf));
-        matriculador.inserir(new Registo(new Matricula("LEIC", 2), new Nome("John", "Middle", "Doe"), d, new Endereco("Rua Sesamo", "220", "8º", "1000-100", "Lisboa"), "john.doe@acme.com", sdf));
+        MATRICULADOR.inserir(new Registo(new Matricula("LEIC", 1), new Nome("John", "Middle", "Doe"), d, new Endereco("Rua Sesamo", "220", "8º", "1000-100", "Lisboa"), "john.doe@acme.com", sdf));
+        MATRICULADOR.inserir(new Registo(new Matricula("LEIC", 1), new Nome("Lenny", "Kravitz"), d, new Endereco("Rua Sesamo", "220", "8º", "1000-100", "Lisboa"), "john.doe@acme.com", sdf));
+        MATRICULADOR.inserir(new Registo(new Matricula("LEEC", 2), new Nome("Britney", "Middle", "Spears"), d, new Endereco("Rua Sesamo", "220", "8º", "1000-100", "Lisboa"), "john.doe@acme.com", sdf));
+        MATRICULADOR.inserir(new Registo(new Matricula("LEEC", 1), new Nome("John", "Middle", "Doe"), d, new Endereco("Rua Sesamo", "220", "8º", "1000-100", "Lisboa"), "john.doe@acme.com", sdf));
+        MATRICULADOR.inserir(new Registo(new Matricula("LEIC", 2), new Nome("John", "Middle", "Doe"), d, new Endereco("Rua Sesamo", "220", "8º", "1000-100", "Lisboa"), "john.doe@acme.com", sdf));
     }
 }

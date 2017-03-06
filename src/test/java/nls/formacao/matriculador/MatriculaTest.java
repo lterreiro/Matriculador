@@ -92,8 +92,7 @@ public class MatriculaTest {
      */
     @org.junit.Test
     public void testGetMatricula() {
-        Matricula instance = null;
-        instance = new Matricula("LEIC", 1);
+        Matricula instance = new Matricula("LEIC", 1);
         assertNotNull(instance);
         String expResult = instance.getCurso() + "/" + instance.getCodEmp() + "/" + instance.getId();
         String result = instance.getMatricula();

@@ -1,0 +1,24 @@
+mar 06, 2017 4:59:06 PM nls.formacao.matriculador.Menu main
+INFO: START
+mar 06, 2017 4:59:09 PM nls.formacao.matriculador.Matriculador inserir
+INFO: Registo inserido com sucesso.
+mar 06, 2017 4:59:09 PM nls.formacao.matriculador.Matriculador inserir
+FINE: Registo inserido.
+mar 06, 2017 4:59:09 PM nls.formacao.matriculador.Matriculador inserir
+INFO: Registo inserido com sucesso.
+mar 06, 2017 4:59:09 PM nls.formacao.matriculador.Matriculador inserir
+FINE: Registo inserido.
+mar 06, 2017 4:59:09 PM nls.formacao.matriculador.Matriculador inserir
+INFO: Registo inserido com sucesso.
+mar 06, 2017 4:59:09 PM nls.formacao.matriculador.Matriculador inserir
+FINE: Registo inserido.
+mar 06, 2017 4:59:09 PM nls.formacao.matriculador.Matriculador inserir
+INFO: Registo inserido com sucesso.
+mar 06, 2017 4:59:09 PM nls.formacao.matriculador.Matriculador inserir
+FINE: Registo inserido.
+mar 06, 2017 4:59:09 PM nls.formacao.matriculador.Matriculador inserir
+INFO: Registo inserido com sucesso.
+mar 06, 2017 4:59:09 PM nls.formacao.matriculador.Matriculador inserir
+FINE: Registo inserido.
+mar 06, 2017 4:59:17 PM nls.formacao.matriculador.Matriculador listar
+FINE: Listagem terminada

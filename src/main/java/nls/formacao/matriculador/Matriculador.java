@@ -3,6 +3,7 @@ package nls.formacao.matriculador;
 import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import nls.formacao.matriculador.descarregador.*;
 
 /**
  * 
@@ -14,18 +15,13 @@ public class Matriculador {
      */
     public static final int MAX_MATRICULAS = 50;
     
-    private static final Logger LOG = Logger.getLogger(Matriculador.class.getName());
+    private static final Logger LOG = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
     
     /**
      *
      */
-    private Registo[] registo;
+    private final Registo[] registo;
     
-    /**
-     * 
-     */
-    private DesCarregador descarregador;
-
     /**
      * 
      */
@@ -105,9 +101,10 @@ public class Matriculador {
 
     /**
      * Descarrega a informacao para determinado meio.
+     * @param d
      */
-    public void descarregar() {
-        // TODO implement me
+    public void descarregar(DesCarregador d) {
+        d.escrever(registo);
     }
 
     /**
