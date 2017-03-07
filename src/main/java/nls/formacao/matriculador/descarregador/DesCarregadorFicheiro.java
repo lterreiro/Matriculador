@@ -32,7 +32,7 @@ public class DesCarregadorFicheiro implements DesCarregador {
         String nome = obtemNomeFicheiro();
         try {
             Path p = Paths.get(nome);
-            Files.write(p, info.getBytes(Charset.forName("UTF-8")), StandardOpenOption.APPEND);
+            Files.write(p, info.getBytes(Charset.forName("UTF-8")), StandardOpenOption.CREATE, StandardOpenOption.APPEND);
         } catch (IOException ex) {
             LOG.log(Level.SEVERE, "Erro a descarregar registos para o ecrã.", ex);
             System.err.println("Erro a descarregar informação para o ecrã.");
@@ -49,12 +49,13 @@ public class DesCarregadorFicheiro implements DesCarregador {
             }
             try {
                 Path p = Paths.get(nome);
-                Files.write(p, registo.prettyPrint().getBytes(Charset.forName("UTF-8")), StandardOpenOption.APPEND);
+                Files.write(p, registo.prettyPrint().getBytes(Charset.forName("UTF-8")), StandardOpenOption.CREATE, StandardOpenOption.APPEND);
             } catch (IOException ex) {
                 LOG.log(Level.SEVERE, "Erro a descarregar registo para o ecrã.", ex);
                 System.err.println("Erro a descarregar registo para o ecrã.");
             }
         }
+        System.out.println(String.format("Criado o ficheiro %s.", nome));
     }
 
     /**
