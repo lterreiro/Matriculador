@@ -2,6 +2,8 @@ package nls.formacao.matriculador;
 
 import java.util.Objects;
 import java.util.logging.Logger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 /**
  *
@@ -37,7 +39,7 @@ public class Endereco {
     /**
      *
      */
-    private static final Logger LOG = Logger.getLogger(Endereco.class.getName());
+    private static final Log LOG = LogFactory.getLog(Endereco.class.getName());
 
     /**
      *

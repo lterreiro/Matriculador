@@ -5,6 +5,8 @@ import java.security.SecureRandom;
 import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class Matricula {
     
@@ -33,13 +35,12 @@ public class Matricula {
     /**
      * LOGGER
      */
-    private static final Logger LOG = Logger.getLogger(Matricula.class.getName());
-
+    private static final Log LOG = LogFactory.getLog(Matricula.class.getName());
+    
     /**
      * 
      * @param curso
      * @param codEmp
-     * @throws NoSuchAlgorithmException 
      */
     public Matricula(String curso, int codEmp) {
         this.codEmp = codEmp;

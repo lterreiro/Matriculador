@@ -4,6 +4,8 @@ import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import nls.formacao.matriculador.descarregador.*;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 /**
  * 
@@ -15,7 +17,7 @@ public class Matriculador {
      */
     public static final int MAX_MATRICULAS = 50;
     
-    private static final Logger LOG = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+    private static final Log LOG = LogFactory.getLog(Matriculador.class.getName());
     
     /**
      *
@@ -51,7 +53,7 @@ public class Matriculador {
                 sb.append(r.prettyPrint());
             }
         }
-        LOG.log(Level.FINE, "Listagem terminada");
+        LOG.debug("Listagem terminada");
         return sb.toString();
     }
 
@@ -62,24 +64,24 @@ public class Matriculador {
      */
     public boolean inserir(Registo reg) {
         if(reg == null){
-            LOG.log(Level.WARNING, "Registo inválido. Não inserido.");
+            LOG.warn("Registo inválido. Não inserido.");
             return false;
         }
         boolean inserido = false;
         for (int i = 0; i < registo.length; i++) {
             if(registo[i] == null){
                 registo[i] = reg;
-                LOG.log(Level.INFO, "Registo inserido com sucesso.");
+                LOG.info("Registo inserido com sucesso.");
                 inserido = true;
                 break;
             }
         }
         if(!inserido){
             System.err.println("Registo não foi inserido. Não foi encontrado espaço.");
-            LOG.log(Level.SEVERE, "Não foi possível inserir o registo.");
+            LOG.error("Não foi possível inserir o registo.");
             return false;
         }
-        LOG.log(Level.FINE, "Registo inserido.");
+        LOG.debug("Registo inserido.");
         return true;
     }
 
@@ -91,11 +93,11 @@ public class Matriculador {
     public Registo pesquisar(String id) {
         for (Registo reg : registo) {
             if(reg != null && reg.getMatricula().getId().equals(id)){
-                LOG.log(Level.FINE, String.format("Registo encontrado para id %s.", id));
+                LOG.debug(String.format("Registo encontrado para id %s.", id));
                 return reg;
             } 
         }
-        LOG.log(Level.FINE, "Registo não encontrado.");
+        LOG.debug("Registo não encontrado.");
         return null;
     }
 
@@ -127,6 +129,13 @@ public class Matriculador {
      */
     public Registo[] getRegisto() {
         return registo;
+    }
+
+    /** 
+     * 
+     */
+    public void eliminarRegistos() {
+        Arrays.fill(registo, null);
     }
     
     

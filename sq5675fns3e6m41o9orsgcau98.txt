@@ -1,7 +1,0 @@
-==============================================
-Nome: John Middle Doe
-Endereço: Rua Sesamo 220 8º 1000-100 Lisboa
-Data Nascimento: 06-12-2017
-Email: john.doe@acme.com
-Matricula: LEIC/2/1443007657
-==============================================

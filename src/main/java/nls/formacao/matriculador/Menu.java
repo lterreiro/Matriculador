@@ -5,21 +5,16 @@
  */
 package nls.formacao.matriculador;
 
-import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Scanner;
-import java.util.logging.ConsoleHandler;
-import java.util.logging.FileHandler;
-import java.util.logging.Handler;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import java.util.logging.SimpleFormatter;
 import nls.formacao.matriculador.descarregador.DesCarregador;
 import nls.formacao.matriculador.descarregador.DesCarregadorExcel;
 import nls.formacao.matriculador.descarregador.DesCarregadorEcra;
 import nls.formacao.matriculador.descarregador.DesCarregadorFicheiro;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 /**
  *
@@ -29,36 +24,24 @@ public class Menu {
 
     private final static Matriculador MATRICULADOR = new Matriculador();
     
-    private static final Logger LOG = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
-   
+    private static final Log LOG = LogFactory.getLog(Menu.class);
     
     public static void main(String[] args) {
-        Handler handler = null;
-        try {
-            //handler = new ConsoleHandler();
-            handler = new FileHandler("log.txt");
-            handler.setFormatter(new SimpleFormatter());
-        } catch (IOException | SecurityException ex) {
-            LOG.log(Level.SEVERE, "Erro a definir file handler", ex);
-            System.err.println("Erro a configurar logger. A sair.");
-            System.exit(1);
-        }
-
-        handler.setLevel(Level.FINE);
-        LOG.setLevel(Level.FINE);
-        LOG.addHandler(handler);
-        LOG.setUseParentHandlers(false);
+        
         Scanner sc = new Scanner(System.in);
         String opcao;
         System.out.println("Bem vindo à aplicação de matriculação de alunos!");
         LOG.info("START");
         do {
             System.out.printf("Estão matriculados %d alunos em %d possiveis.\n", MATRICULADOR.numMatriculados(), Matriculador.MAX_MATRICULAS);
-            System.out.println("Selecione uma opção: (A)uto Inserir; (I)nserir; (L)istar; (P)esquisar; (D)escarregar; (S)air");
+            System.out.println("Selecione uma opção: (A)uto Inserir; (I)nserir; (L)istar; (P)esquisar; (D)escarregar; (E)liminarA; (S)air");
             opcao = sc.nextLine();
             switch (opcao.toUpperCase()) {
                 case "A":
                     inserirRegistos();
+                    break;
+                case "E":
+                    eliminarRegistos();
                     break;
                 case "I":
                     inserir();
@@ -111,7 +94,7 @@ public class Menu {
         registo.setEmail(ui.askInputEmail("Indique o email: "));
         //data nascimento
         registo.setDataNascimento(ui.askInputDateWithFormat("Indique a data nascimento: ", Registo.FORMATO_DATA));
-        LOG.log(Level.FINE, "Registo introduzido: {0}", registo.toString());
+        LOG.debug(String.format("Registo introduzido: %s", registo.toString()));
         MATRICULADOR.inserir(registo);
         System.out.println("Registo inserido com sucesso.");
     }
@@ -159,7 +142,7 @@ public class Menu {
                     System.err.println("Opção inválida");
             }
             if(descarregador != null){
-                LOG.log(Level.FINE, "A escrever informação");
+                LOG.debug("A escrever informação");
                 MATRICULADOR.descarregar(descarregador);
             }
         } while (true);
@@ -185,5 +168,9 @@ public class Menu {
         MATRICULADOR.inserir(new Registo(new Matricula("LEEC", 2), new Nome("Britney", "Middle", "Spears"), d, new Endereco("Rua Sesamo", "220", "8º", "1000-100", "Lisboa"), "john.doe@acme.com", sdf));
         MATRICULADOR.inserir(new Registo(new Matricula("LEEC", 1), new Nome("John", "Middle", "Doe"), d, new Endereco("Rua Sesamo", "220", "8º", "1000-100", "Lisboa"), "john.doe@acme.com", sdf));
         MATRICULADOR.inserir(new Registo(new Matricula("LEIC", 2), new Nome("John", "Middle", "Doe"), d, new Endereco("Rua Sesamo", "220", "8º", "1000-100", "Lisboa"), "john.doe@acme.com", sdf));
+    }
+
+    private static void eliminarRegistos() {
+        MATRICULADOR.eliminarRegistos();
     }
 }

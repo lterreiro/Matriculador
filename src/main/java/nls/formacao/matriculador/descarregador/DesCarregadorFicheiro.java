@@ -11,6 +11,7 @@ import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.security.SecureRandom;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -23,15 +24,15 @@ import nls.formacao.matriculador.Registo;
 public class DesCarregadorFicheiro implements DesCarregador {
 
     private final SecureRandom random = new SecureRandom();
-    
+
     private static final Logger LOG = Logger.getLogger(DesCarregadorFicheiro.class.getName());
-    
+
     @Override
     public void escrever(String info) {
         String nome = obtemNomeFicheiro();
         try {
             Path p = Paths.get(nome);
-            Files.write(p, info.getBytes(Charset.forName("UTF-8")));
+            Files.write(p, info.getBytes(Charset.forName("UTF-8")), StandardOpenOption.APPEND);
         } catch (IOException ex) {
             LOG.log(Level.SEVERE, "Erro a descarregar registos para o ecrã.", ex);
             System.err.println("Erro a descarregar informação para o ecrã.");
@@ -43,19 +44,23 @@ public class DesCarregadorFicheiro implements DesCarregador {
     public void escrever(Registo[] info) {
         String nome = obtemNomeFicheiro();
         for (Registo registo : info) {
-            if(registo == null){
+            if (registo == null) {
                 continue;
             }
             try {
                 Path p = Paths.get(nome);
-                Files.write(p, registo.prettyPrint().getBytes(Charset.forName("UTF-8")));
+                Files.write(p, registo.prettyPrint().getBytes(Charset.forName("UTF-8")), StandardOpenOption.APPEND);
             } catch (IOException ex) {
                 LOG.log(Level.SEVERE, "Erro a descarregar registo para o ecrã.", ex);
-            System.err.println("Erro a descarregar registo para o ecrã.");
+                System.err.println("Erro a descarregar registo para o ecrã.");
             }
         }
     }
 
+    /**
+     *
+     * @return
+     */
     private String obtemNomeFicheiro() {
         String nome = new BigInteger(130, random).toString(32) + ".txt";
         LOG.log(Level.FINE, "gerado nome ficheiro: {0}", nome);
@@ -66,5 +71,5 @@ public class DesCarregadorFicheiro implements DesCarregador {
     public void ler(String meio) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
 }

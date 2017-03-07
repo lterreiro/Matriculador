@@ -5,6 +5,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Objects;
 import java.util.logging.Logger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 /**
  *
@@ -15,6 +17,11 @@ public class Registo {
      * representa o formato da data esperado pelo registo.
      */
     public static final String FORMATO_DATA = "dd-mm-yyyy";
+    
+    /**
+     * 
+     */
+    private static final Log LOG = LogFactory.getLog(Registo.class.getName());
     
     /**
      *
@@ -45,11 +52,6 @@ public class Registo {
      * 
      */
     private DateFormat df;
-    
-    /**
-     * 
-     */
-    private static final Logger LOG = Logger.getLogger(Registo.class.getName());
     
     /**
      *

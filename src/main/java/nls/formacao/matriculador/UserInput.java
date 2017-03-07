@@ -11,6 +11,8 @@ import java.util.Date;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 /**
  * @author Moriel Schottlender
@@ -24,7 +26,7 @@ public class UserInput {
 
     private Scanner keyboard;
     
-    private static final Logger LOG = Logger.getLogger(UserInput.class.getName());
+    private static final Log LOG = LogFactory.getLog(UserInput.class.getName());
     
 
     public UserInput() {
@@ -197,13 +199,13 @@ public class UserInput {
                 d = sdf.parse(userInp);
                 if(!userInp.equals(sdf.format(d))){
                     error = true;
-                    LOG.log(Level.SEVERE, "data inválida.");
+                    LOG.error("data inválida.");
                     System.err.printf("Data introduzida inválida. Formato esperado '%s'.\n\n", format);
                 }else{
                     error = false;
                 }
             } catch (ParseException ex) {
-                LOG.log(Level.SEVERE, null, ex);
+                LOG.error("erro a fazer parse da data.", ex);
                 error = true;
                 System.err.printf("Erro: Deve ser introduzido uma data com o formato '%s'.\n\n", format);
             }

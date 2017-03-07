@@ -15,19 +15,21 @@ public class DesCarregadorEcra implements DesCarregador {
 
     @Override
     public void escrever(String info) {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println(info);
     }
 
     @Override
     public void escrever(Registo[] info) {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        for (Registo registo : info) {
+            if (registo != null) {
+                System.out.println(registo.prettyPrint());
+            }
+        }
     }
 
     @Override
     public void ler(String meio) {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-
-    
 }

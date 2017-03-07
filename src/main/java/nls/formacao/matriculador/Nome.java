@@ -2,6 +2,8 @@ package nls.formacao.matriculador;
 
 import java.util.Objects;
 import java.util.logging.Logger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 /**
  * Define o nome de um aluno
@@ -26,7 +28,7 @@ public class Nome {
     /**
      * LOGGER
      */
-    private static final Logger LOG = Logger.getLogger(Nome.class.getName());
+    private static final Log LOG = LogFactory.getLog(Nome.class.getName());
     
     /**
      * Constrói um nome.
