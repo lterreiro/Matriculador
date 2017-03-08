@@ -88,14 +88,14 @@ public class MatriculaTest {
     }
 
     /**
-     * Test of getMatricula method, of class Matricula.
+     * Test of matriculaCompleta method, of class Matricula.
      */
     @org.junit.Test
     public void testGetMatricula() {
         Matricula instance = new Matricula("LEIC", 1);
         assertNotNull(instance);
         String expResult = instance.getCurso() + "/" + instance.getCodEmp() + "/" + instance.getId();
-        String result = instance.getMatricula();
+        String result = instance.matriculaCompleta();
         assertEquals(expResult, result);
     }
 

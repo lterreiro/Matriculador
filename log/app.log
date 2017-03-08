@@ -48,3 +48,30 @@
 2017-03-07 17:18:56 INFO  Matriculador:74 - Registo inserido com sucesso.
 2017-03-07 17:18:56 DEBUG Matriculador:84 - Registo inserido.
 2017-03-07 17:19:01 DEBUG Menu:145 - A escrever informação
+2017-03-08 15:01:32 INFO  Menu:34 - START
+2017-03-08 15:01:51 INFO  Matriculador:74 - Registo inserido com sucesso.
+2017-03-08 15:01:51 DEBUG Matriculador:84 - Registo inserido.
+2017-03-08 15:01:51 INFO  Matriculador:74 - Registo inserido com sucesso.
+2017-03-08 15:01:51 DEBUG Matriculador:84 - Registo inserido.
+2017-03-08 15:01:51 INFO  Matriculador:74 - Registo inserido com sucesso.
+2017-03-08 15:01:51 DEBUG Matriculador:84 - Registo inserido.
+2017-03-08 15:01:51 INFO  Matriculador:74 - Registo inserido com sucesso.
+2017-03-08 15:01:51 DEBUG Matriculador:84 - Registo inserido.
+2017-03-08 15:01:51 INFO  Matriculador:74 - Registo inserido com sucesso.
+2017-03-08 15:01:51 DEBUG Matriculador:84 - Registo inserido.
+2017-03-08 15:01:58 DEBUG Menu:145 - A escrever informação
+2017-03-08 15:01:58 DEBUG DesCarregadorExcel:83 - gerado nome ficheiro: {0}
+2017-03-08 15:02:33 INFO  Menu:34 - START
+2017-03-08 15:02:47 INFO  Matriculador:74 - Registo inserido com sucesso.
+2017-03-08 15:02:47 DEBUG Matriculador:84 - Registo inserido.
+2017-03-08 15:02:47 INFO  Matriculador:74 - Registo inserido com sucesso.
+2017-03-08 15:02:47 DEBUG Matriculador:84 - Registo inserido.
+2017-03-08 15:02:47 INFO  Matriculador:74 - Registo inserido com sucesso.
+2017-03-08 15:02:47 DEBUG Matriculador:84 - Registo inserido.
+2017-03-08 15:02:47 INFO  Matriculador:74 - Registo inserido com sucesso.
+2017-03-08 15:02:47 DEBUG Matriculador:84 - Registo inserido.
+2017-03-08 15:02:47 INFO  Matriculador:74 - Registo inserido com sucesso.
+2017-03-08 15:02:47 DEBUG Matriculador:84 - Registo inserido.
+2017-03-08 15:02:49 DEBUG Menu:145 - A escrever informação
+2017-03-08 15:02:49 DEBUG DesCarregadorExcel:84 - gerado nome ficheiro: {0}
+2017-03-08 15:02:50 INFO  DesCarregadorExcel:70 - Informação descarregada com sucesso para o ficheiro 'of8cba8v8ilerufuombkl9geen.xls'

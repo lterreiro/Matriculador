@@ -80,7 +80,7 @@ public class Matricula {
      * Indica o código da matrícula criado.
      * @return String representando a matrícula.
      */
-    public String getMatricula() {
+    public String matriculaCompleta() {
         StringBuilder sb = new StringBuilder();
         sb.append(this.curso).append(SEPARADOR)
           .append(this.codEmp).append(SEPARADOR)

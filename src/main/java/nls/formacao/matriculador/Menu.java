@@ -34,7 +34,7 @@ public class Menu {
         LOG.info("START");
         do {
             System.out.printf("Estão matriculados %d alunos em %d possiveis.\n", MATRICULADOR.numMatriculados(), Matriculador.MAX_MATRICULAS);
-            System.out.println("Selecione uma opção: (A)uto Inserir; (I)nserir; (L)istar; (P)esquisar; (D)escarregar; (E)liminarA; (S)air");
+            System.out.println("Selecione uma opção: (A)uto Inserir; (I)nserir; (L)istar; (P)esquisar; (D)escarregar; (E)liminar; (S)air");
             opcao = sc.nextLine();
             switch (opcao.toUpperCase()) {
                 case "A":

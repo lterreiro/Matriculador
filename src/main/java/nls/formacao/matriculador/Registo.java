@@ -130,7 +130,7 @@ public class Registo {
         sb.append("Endereço: ").append(this.getEndereco().enderecoCompleto()).append("\n");
         sb.append("Data Nascimento: ").append(this.getDataNascimentoStr()).append("\n");
         sb.append("Email: ").append(this.getEmail()).append("\n");
-        sb.append("Matricula: ").append(this.getMatricula().getMatricula()).append("\n");
+        sb.append("Matricula: ").append(this.getMatricula().matriculaCompleta()).append("\n");
         sb.append("==============================================\n");
         
         return sb.toString();

@@ -63,7 +63,7 @@ public class RegistoTest {
     }
 
     /**
-     * Test of getMatricula method, of class Registo.
+     * Test of matriculaCompleta method, of class Registo.
      */
     @Test
     public void testGetMatricula() {
