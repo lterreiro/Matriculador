@@ -23,11 +23,17 @@ import org.apache.commons.logging.LogFactory;
 public class Menu {
 
     private final static Matriculador MATRICULADOR = new Matriculador();
-    
+
     private static final Log LOG = LogFactory.getLog(Menu.class);
-    
+
     public static void main(String[] args) {
-        
+        try {
+            Class.forName("oracle.jdbc.driver.OracleDriver");
+        } catch (ClassNotFoundException e) {
+            System.err.println("Where is your Oracle JDBC Driver?");
+            LOG.error("Driver não encontrado.", e);
+            return;
+        }
         Scanner sc = new Scanner(System.in);
         String opcao;
         System.out.println("Bem vindo à aplicação de matriculação de alunos!");
@@ -65,7 +71,7 @@ public class Menu {
     }
 
     /**
-     * 
+     *
      */
     private static void inserir() {
         Scanner sc = new Scanner(System.in);
@@ -87,7 +93,7 @@ public class Menu {
         registo.setEndereco(endereco);
         //matricula
         String curso = ui.askInputString("Indique o curso: ");
-        int codEmp = 1; 
+        int codEmp = 1;
         Matricula matricula = new Matricula(curso, codEmp);
         registo.setMatricula(matricula);
         //email
@@ -100,14 +106,15 @@ public class Menu {
     }
 
     /**
-     * 
+     *
      */
     private static void listar() {
-        System.out.println(MATRICULADOR.listar());
+        //System.out.println(MATRICULADOR.listar());
+        System.out.println(MATRICULADOR.listarBD());
     }
 
     /**
-     * 
+     *
      */
     private static void pesquisar() {
         Scanner sc = new Scanner(System.in);
@@ -117,7 +124,7 @@ public class Menu {
     }
 
     /**
-     * 
+     *
      */
     private static void descarregar() {
         DesCarregador descarregador = null;
@@ -125,7 +132,7 @@ public class Menu {
         do {
             System.out.println("Selecione uma opção de descarregamento: (E)crã; Ficheirob(T)XT; Ficheiro (X)LS; (V)oltar;");
             String opcao = sc.nextLine();
-            switch(opcao){
+            switch (opcao) {
                 case "E":
                     descarregador = new DesCarregadorEcra();
                     break;
@@ -141,16 +148,16 @@ public class Menu {
                     descarregador = null;
                     System.err.println("Opção inválida");
             }
-            if(descarregador != null){
+            if (descarregador != null) {
                 LOG.debug("A escrever informação");
                 MATRICULADOR.descarregar(descarregador);
             }
         } while (true);
-        
+
     }
-    
+
     /**
-     * 
+     *
      */
     private static void sair() {
         System.out.println("Obrigado por utilizar a aplicação. Adeus.");
@@ -158,7 +165,7 @@ public class Menu {
     }
 
     /**
-     * 
+     *
      */
     private static void inserirRegistos() {
         Date d = Calendar.getInstance().getTime();

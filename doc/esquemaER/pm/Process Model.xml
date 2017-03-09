@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<ProcessModel class="oracle.dbtools.crest.model.design.process.ProcessModel" name="Process Model" id="246CE236-D14C-6AE6-D9E8-F79F1FF903D5">
+<createdBy>Formação</createdBy>
+<createdTime>2017-03-09 09:14:36 UTC</createdTime>
+<ownerDesignName>esquemaER</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</ProcessModel>

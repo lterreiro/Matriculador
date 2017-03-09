@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<LogicalDesign class="oracle.dbtools.crest.model.design.logical.LogicalDesign" name="Logical" id="35B38FDE-5402-1F17-4A55-7ECFCCFB67EF" mainViewID="76D4574F-A10E-AB7E-8DC8-EAB4D27B8DAC">
+<createdBy>Formação</createdBy>
+<createdTime>2017-03-09 09:14:35 UTC</createdTime>
+<ownerDesignName>esquemaER</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</LogicalDesign>

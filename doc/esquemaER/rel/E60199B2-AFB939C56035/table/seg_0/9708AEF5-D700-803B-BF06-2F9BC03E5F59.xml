@@ -1,0 +1,119 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="9708AEF5-D700-803B-BF06-2F9BC03E5F59" name="REGISTO">
+<createdBy>Formação</createdBy>
+<createdTime>2017-03-09 09:23:54 UTC</createdTime>
+<ownerDesignName>esquemaER</ownerDesignName>
+<ordsAlias>table_2</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="idMat" id="F4E679B8-AC18-5628-B212-352FC9B8807B">
+<createdBy>Formação</createdBy>
+<createdTime>2017-03-09 09:25:32 UTC</createdTime>
+<commentInRDBMS>id da matricula</commentInRDBMS>
+<ownerDesignName>esquemaER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="codEmp" id="9635C1CE-A7FC-01C5-7E23-37B81754613E">
+<createdBy>Formação</createdBy>
+<createdTime>2017-03-09 09:25:32 UTC</createdTime>
+<commentInRDBMS>Código do empregado</commentInRDBMS>
+<ownerDesignName>esquemaER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nome" id="09B7E371-73F1-46F9-6F57-0D9C37CC690D">
+<createdBy>Formação</createdBy>
+<createdTime>2017-03-09 09:30:36 UTC</createdTime>
+<commentInRDBMS>primeiro nome do aluno</commentInRDBMS>
+<ownerDesignName>esquemaER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="apelido" id="5299D57A-37C6-79A8-2984-1EE8B523FDE4">
+<createdBy>Formação</createdBy>
+<createdTime>2017-03-09 09:31:15 UTC</createdTime>
+<commentInRDBMS>apelido do aluno</commentInRDBMS>
+<ownerDesignName>esquemaER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="dataNasc" id="289BF791-0A81-AC4B-1B2F-878AAA42A1AC">
+<createdBy>Formação</createdBy>
+<createdTime>2017-03-09 09:32:46 UTC</createdTime>
+<commentInRDBMS>data nascimento aluno</commentInRDBMS>
+<ownerDesignName>esquemaER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="email" id="3706280C-48EB-93C3-E586-8217611807BD">
+<createdBy>Formação</createdBy>
+<createdTime>2017-03-09 09:34:13 UTC</createdTime>
+<ownerDesignName>esquemaER</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="idEnd" id="3C17A047-9076-A1AF-D899-872D07EC1E59">
+<createdBy>Formação</createdBy>
+<createdTime>2017-03-09 09:47:39 UTC</createdTime>
+<commentInRDBMS>chave estrangeira endereco</commentInRDBMS>
+<ownerDesignName>esquemaER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E3F077F1-7202-9EFC-CBE9-67A8653A0B7C" referredColumn="E7D663B9-04AE-C0C9-3DC0-61CB6A7B9A1C"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="DBCDD62D-62EF-B2CB-7001-30F43B4B913E" name="REGISTO_PK">
+<createdBy>Formação</createdBy>
+<createdTime>2017-03-09 09:25:32 UTC</createdTime>
+<ownerDesignName>esquemaER</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F4E679B8-AC18-5628-B212-352FC9B8807B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="059C6A2B-857F-DEFF-48DA-20D8C4ED2340" name="REGISTO_ENDERECO_FK">
+<createdBy>Formação</createdBy>
+<createdTime>2017-03-09 09:47:48 UTC</createdTime>
+<ownerDesignName>esquemaER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3C17A047-9076-A1AF-D899-872D07EC1E59"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

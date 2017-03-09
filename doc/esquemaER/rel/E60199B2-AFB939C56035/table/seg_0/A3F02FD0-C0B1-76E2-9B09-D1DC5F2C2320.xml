@@ -1,0 +1,99 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A3F02FD0-C0B1-76E2-9B09-D1DC5F2C2320" name="ENDERECO">
+<createdBy>Formação</createdBy>
+<createdTime>2017-03-09 09:35:28 UTC</createdTime>
+<ownerDesignName>esquemaER</ownerDesignName>
+<ordsAlias>table_3</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="idEnd" id="E7D663B9-04AE-C0C9-3DC0-61CB6A7B9A1C">
+<createdBy>Formação</createdBy>
+<createdTime>2017-03-09 09:37:19 UTC</createdTime>
+<commentInRDBMS>id de um endereço</commentInRDBMS>
+<ownerDesignName>esquemaER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="rua" id="E81A6285-1C3F-F6D4-4685-5D81D50ABE4C">
+<createdBy>Formação</createdBy>
+<createdTime>2017-03-09 09:39:30 UTC</createdTime>
+<commentInRDBMS>rua do endereço</commentInRDBMS>
+<ownerDesignName>esquemaER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="codPostal" id="6C1B04F0-B6ED-B846-D3C7-E248F8670FE1">
+<createdBy>Formação</createdBy>
+<createdTime>2017-03-09 09:39:30 UTC</createdTime>
+<commentInRDBMS>codigo postal</commentInRDBMS>
+<ownerDesignName>esquemaER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>8</dataTypeSize>
+<ownDataTypeParameters>8,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="lote" id="BBA1CB31-B523-AFB6-8782-EB26CF42D26C">
+<createdBy>Formação</createdBy>
+<createdTime>2017-03-09 09:39:30 UTC</createdTime>
+<commentInRDBMS>lote do endereço</commentInRDBMS>
+<ownerDesignName>esquemaER</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="andar" id="BDB25689-4A6D-BE59-274D-4FCA36231FEE">
+<createdBy>Formação</createdBy>
+<createdTime>2017-03-09 09:39:52 UTC</createdTime>
+<commentInRDBMS>andar do endereço</commentInRDBMS>
+<ownerDesignName>esquemaER</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>5</dataTypeSize>
+<ownDataTypeParameters>5,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="localidade" id="A9F936FB-3046-A515-1FB4-C345D5E60C08">
+<createdBy>Formação</createdBy>
+<createdTime>2017-03-09 09:40:18 UTC</createdTime>
+<commentInRDBMS>localidade do endereço</commentInRDBMS>
+<ownerDesignName>esquemaER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="4078E087-BF4B-EBA4-EA3D-D4DC57EE8BDE" name="ENDERECO_PK">
+<createdBy>Formação</createdBy>
+<createdTime>2017-03-09 09:37:19 UTC</createdTime>
+<ownerDesignName>esquemaER</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E7D663B9-04AE-C0C9-3DC0-61CB6A7B9A1C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

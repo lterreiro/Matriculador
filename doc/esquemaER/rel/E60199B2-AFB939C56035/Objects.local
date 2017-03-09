@@ -1,0 +1,6 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.relational.RelationalDesign>
+   <object objectType="Table" objectID="A3F02FD0-C0B1-76E2-9B09-D1DC5F2C2320" name="ENDERECO" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.relational.Table" propertyParentId="E60199B2-3C75-F9BA-EC6B-AFB939C56035" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Table" objectID="9708AEF5-D700-803B-BF06-2F9BC03E5F59" name="REGISTO" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.relational.Table" propertyParentId="E60199B2-3C75-F9BA-EC6B-AFB939C56035" propertySourceId="" propertyTargetId=""/>
+   <object objectType="FKIndexAssociation" objectID="E3F077F1-7202-9EFC-CBE9-67A8653A0B7C" name="REGISTO_ENDERECO_FK" seqName="seg_0" containerID="9708AEF5-D700-803B-BF06-2F9BC03E5F59" refContainerID="A3F02FD0-C0B1-76E2-9B09-D1DC5F2C2320" propertyClassName="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" propertyParentId="E60199B2-3C75-F9BA-EC6B-AFB939C56035" propertySourceId="A3F02FD0-C0B1-76E2-9B09-D1DC5F2C2320" propertyTargetId="9708AEF5-D700-803B-BF06-2F9BC03E5F59"/>
+</oracle.dbtools.crest.model.design.relational.RelationalDesign>

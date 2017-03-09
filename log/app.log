@@ -75,3 +75,25 @@
 2017-03-08 15:02:49 DEBUG Menu:145 - A escrever informação
 2017-03-08 15:02:49 DEBUG DesCarregadorExcel:84 - gerado nome ficheiro: {0}
 2017-03-08 15:02:50 INFO  DesCarregadorExcel:70 - Informação descarregada com sucesso para o ficheiro 'of8cba8v8ilerufuombkl9geen.xls'
+2017-03-09 10:50:09 INFO  Matriculador:74 - Registo inserido com sucesso.
+2017-03-09 10:50:09 DEBUG Matriculador:84 - Registo inserido.
+2017-03-09 10:50:09 DEBUG Matriculador:96 - Registo encontrado para id 969610765.
+2017-03-09 10:50:09 INFO  Matriculador:74 - Registo inserido com sucesso.
+2017-03-09 10:50:09 DEBUG Matriculador:84 - Registo inserido.
+2017-03-09 10:50:09 INFO  Matriculador:74 - Registo inserido com sucesso.
+2017-03-09 10:50:09 DEBUG Matriculador:84 - Registo inserido.
+2017-03-09 10:50:09 INFO  Matriculador:74 - Registo inserido com sucesso.
+2017-03-09 10:50:09 DEBUG Matriculador:84 - Registo inserido.
+2017-03-09 10:50:09 INFO  Matriculador:74 - Registo inserido com sucesso.
+2017-03-09 10:50:09 DEBUG Matriculador:84 - Registo inserido.
+2017-03-09 10:50:09 ERROR Matriculador:81 - Não foi possível inserir o registo.
+2017-03-09 10:50:09 INFO  Matriculador:74 - Registo inserido com sucesso.
+2017-03-09 10:50:09 DEBUG Matriculador:84 - Registo inserido.
+2017-03-09 10:50:09 INFO  Matriculador:74 - Registo inserido com sucesso.
+2017-03-09 10:50:09 DEBUG Matriculador:84 - Registo inserido.
+2017-03-09 10:50:09 DEBUG Matriculador:56 - Listagem terminada
+2017-03-09 10:50:09 WARN  Matriculador:67 - Registo inválido. Não inserido.
+2017-03-09 10:50:09 INFO  Matriculador:74 - Registo inserido com sucesso.
+2017-03-09 10:50:09 DEBUG Matriculador:84 - Registo inserido.
+2017-03-09 10:57:46 INFO  Menu:34 - START
+2017-03-09 12:04:43 INFO  Menu:40 - START
