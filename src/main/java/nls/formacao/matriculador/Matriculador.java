@@ -170,8 +170,7 @@ public class Matriculador {
     private Connection getConnection() {
         Connection connection = null;
         try {
-            connection = DriverManager.getConnection(
-                    "jdbc:oracle:thin:@localhost:1521:xe", "nls", "nls");
+            connection = pds.getConnection();
         } catch (SQLException e) {
             System.err.println("Erro a obter ligacao BD.");
             LOG.error("Erro a obter ligacao BD.", e);
