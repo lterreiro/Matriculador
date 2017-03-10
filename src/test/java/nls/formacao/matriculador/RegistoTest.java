@@ -187,7 +187,7 @@ public class RegistoTest {
     public void testHashCode() {
         System.out.println("hashCode");
         Registo instance = new Registo();
-        int expResult = -722937297;
+        int expResult = 25583151;
         int result = instance.hashCode();
         assertEquals(expResult, result);
     }

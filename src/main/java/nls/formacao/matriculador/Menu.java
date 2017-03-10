@@ -101,7 +101,8 @@ public class Menu {
         //data nascimento
         registo.setDataNascimento(ui.askInputDateWithFormat("Indique a data nascimento: ", Registo.FORMATO_DATA));
         LOG.debug(String.format("Registo introduzido: %s", registo.toString()));
-        MATRICULADOR.inserir(registo);
+        MATRICULADOR.inserirBD(registo);
+        //MATRICULADOR.inserir(registo);
         System.out.println("Registo inserido com sucesso.");
     }
 
@@ -109,8 +110,11 @@ public class Menu {
      *
      */
     private static void listar() {
+        final String lista = MATRICULADOR.listarBD();
         //System.out.println(MATRICULADOR.listar());
-        System.out.println(MATRICULADOR.listarBD());
+        if(lista != null){
+         System.out.println(lista);
+        }
     }
 
     /**

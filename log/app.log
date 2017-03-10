@@ -97,3 +97,76 @@
 2017-03-09 10:50:09 DEBUG Matriculador:84 - Registo inserido.
 2017-03-09 10:57:46 INFO  Menu:34 - START
 2017-03-09 12:04:43 INFO  Menu:40 - START
+2017-03-10 09:21:04 INFO  Menu:40 - START
+2017-03-10 09:22:21 INFO  Menu:40 - START
+2017-03-10 09:24:31 INFO  Menu:40 - START
+2017-03-10 09:24:34 INFO  Matriculador:169 - Ligação obtida.
+2017-03-10 09:25:15 INFO  Menu:40 - START
+2017-03-10 09:25:18 INFO  Matriculador:169 - Ligação obtida.
+2017-03-10 09:36:26 INFO  Menu:40 - START
+2017-03-10 09:36:30 INFO  Matriculador:169 - Ligação obtida.
+2017-03-10 09:36:30 WARN  Matriculador:189 - Não foram encontrados resultados.
+2017-03-10 09:37:22 INFO  Menu:40 - START
+2017-03-10 09:37:25 INFO  Matriculador:169 - Ligação obtida.
+2017-03-10 09:37:25 WARN  Matriculador:189 - Não foram encontrados resultados.
+2017-03-10 09:37:39 INFO  Menu:40 - START
+2017-03-10 09:37:44 INFO  Matriculador:169 - Ligação obtida.
+2017-03-10 09:37:44 WARN  Matriculador:189 - Não foram encontrados resultados.
+2017-03-10 09:38:27 INFO  Menu:40 - START
+2017-03-10 09:38:37 INFO  Matriculador:169 - Ligação obtida.
+2017-03-10 09:41:23 INFO  Menu:40 - START
+2017-03-10 09:41:27 INFO  Matriculador:169 - Ligação obtida.
+2017-03-10 09:41:41 INFO  Menu:40 - START
+2017-03-10 09:41:43 INFO  Matriculador:169 - Ligação obtida.
+2017-03-10 09:41:43 WARN  Matriculador:189 - Não foram encontrados resultados.
+2017-03-10 10:23:12 INFO  Menu:40 - START
+2017-03-10 10:24:18 DEBUG Menu:103 - Registo introduzido: Registo{matricula=Matricula{id=223873463, codEmp=1, curso=LEIC}, nome=Nome{primeiro=Luis, meio=Guedes, ultimo=Terreiro}, dataNascimento=Mon Jan 01 00:01:00 WET 1979, endereco=Endereco{rua=Rua Y, codPostal=1234-456, localidade=Portela, lote=2, andar=9}, email=luis.terreiro@nls.pt}
+2017-03-10 10:25:11 INFO  Menu:40 - START
+2017-03-10 10:25:48 DEBUG Menu:103 - Registo introduzido: Registo{matricula=Matricula{id=1159855585, codEmp=1, curso=LEIC}, nome=Nome{primeiro=Luis, meio=Guedes, ultimo=Terreiro}, dataNascimento=Thu Jan 01 00:01:00 WET 1970, endereco=Endereco{rua=Rua X, codPostal=1111-111, localidade=Lx, lote=3, andar=2}, email=luis.terreiro@nls.pt}
+2017-03-10 10:25:49 INFO  Matriculador:170 - Ligação obtida.
+2017-03-10 10:40:22 INFO  Menu:40 - START
+2017-03-10 10:41:05 DEBUG Menu:103 - Registo introduzido: Registo{matricula=Matricula{id=1125118, codEmp=1, curso=leic}, nome=Nome{primeiro=Luis, meio=Guedes, ultimo=Terreiro}, dataNascimento=Thu Jan 01 00:01:00 WET 1970, endereco=Endereco{rua=rr, codPostal=1111-111, localidade=rr, lote=rr, andar=rr}, email=luis.terreiro@nls.pt}
+2017-03-10 10:41:05 INFO  Matriculador:170 - Ligação obtida.
+2017-03-10 10:41:06 INFO  Matriculador:252 - Informação inserida com sucesso.
+2017-03-10 11:28:04 INFO  Matriculador:85 - Registo inserido com sucesso.
+2017-03-10 11:28:04 DEBUG Matriculador:95 - Registo inserido.
+2017-03-10 11:28:04 DEBUG Matriculador:108 - Registo encontrado para id 1077518773.
+2017-03-10 11:28:04 INFO  Matriculador:85 - Registo inserido com sucesso.
+2017-03-10 11:28:04 DEBUG Matriculador:95 - Registo inserido.
+2017-03-10 11:28:04 INFO  Matriculador:85 - Registo inserido com sucesso.
+2017-03-10 11:28:04 DEBUG Matriculador:95 - Registo inserido.
+2017-03-10 11:28:04 INFO  Matriculador:85 - Registo inserido com sucesso.
+2017-03-10 11:28:04 DEBUG Matriculador:95 - Registo inserido.
+2017-03-10 11:28:04 INFO  Matriculador:85 - Registo inserido com sucesso.
+2017-03-10 11:28:04 DEBUG Matriculador:95 - Registo inserido.
+2017-03-10 11:28:04 ERROR Matriculador:92 - Não foi possível inserir o registo.
+2017-03-10 11:28:04 INFO  Matriculador:85 - Registo inserido com sucesso.
+2017-03-10 11:28:04 DEBUG Matriculador:95 - Registo inserido.
+2017-03-10 11:28:04 INFO  Matriculador:85 - Registo inserido com sucesso.
+2017-03-10 11:28:04 DEBUG Matriculador:95 - Registo inserido.
+2017-03-10 11:28:04 DEBUG Matriculador:66 - Listagem terminada
+2017-03-10 11:28:04 WARN  Matriculador:78 - Registo inválido. Não inserido.
+2017-03-10 11:28:04 INFO  Matriculador:85 - Registo inserido com sucesso.
+2017-03-10 11:28:04 DEBUG Matriculador:95 - Registo inserido.
+2017-03-10 11:28:30 INFO  Matriculador:85 - Registo inserido com sucesso.
+2017-03-10 11:28:30 DEBUG Matriculador:95 - Registo inserido.
+2017-03-10 11:28:30 DEBUG Matriculador:108 - Registo encontrado para id 1569340281.
+2017-03-10 11:28:30 INFO  Matriculador:85 - Registo inserido com sucesso.
+2017-03-10 11:28:30 DEBUG Matriculador:95 - Registo inserido.
+2017-03-10 11:28:30 INFO  Matriculador:85 - Registo inserido com sucesso.
+2017-03-10 11:28:30 DEBUG Matriculador:95 - Registo inserido.
+2017-03-10 11:28:30 INFO  Matriculador:85 - Registo inserido com sucesso.
+2017-03-10 11:28:30 DEBUG Matriculador:95 - Registo inserido.
+2017-03-10 11:28:30 INFO  Matriculador:85 - Registo inserido com sucesso.
+2017-03-10 11:28:30 DEBUG Matriculador:95 - Registo inserido.
+2017-03-10 11:28:30 ERROR Matriculador:92 - Não foi possível inserir o registo.
+2017-03-10 11:28:30 INFO  Matriculador:85 - Registo inserido com sucesso.
+2017-03-10 11:28:30 DEBUG Matriculador:95 - Registo inserido.
+2017-03-10 11:28:30 INFO  Matriculador:85 - Registo inserido com sucesso.
+2017-03-10 11:28:30 DEBUG Matriculador:95 - Registo inserido.
+2017-03-10 11:28:30 DEBUG Matriculador:66 - Listagem terminada
+2017-03-10 11:28:30 WARN  Matriculador:78 - Registo inválido. Não inserido.
+2017-03-10 11:28:30 INFO  Matriculador:85 - Registo inserido com sucesso.
+2017-03-10 11:28:30 DEBUG Matriculador:95 - Registo inserido.
+2017-03-10 11:32:08 INFO  Menu:40 - START
+2017-03-10 11:32:12 INFO  Matriculador:183 - Ligação obtida.
