@@ -44,11 +44,11 @@ public class MatriculadorTest {
     }
 
     /**
-     * Test of listar method, of class Matriculador.
+     * Test of listar method, of class MatriculadorArray.
      */
     @Test
     public void testListar() {
-        Matriculador instance = new Matriculador();
+        MatriculadorArray instance = new MatriculadorArray();
         
         SimpleDateFormat sdf = new SimpleDateFormat("dd-mm-yyyy");
         Date d = null;
@@ -66,12 +66,12 @@ public class MatriculadorTest {
     }
 
     /**
-     * Test of inserir method, of class Matriculador.
+     * Test of inserir method, of class MatriculadorArray.
      */
     @Test
     public void testInserir() {
         
-        Matriculador instance = new Matriculador();
+        MatriculadorArray instance = new MatriculadorArray();
         Registo registo = null;
         instance.inserir(registo);
         int expected = 0;
@@ -96,11 +96,11 @@ public class MatriculadorTest {
     }
 
     /**
-     * Test of pesquisar method, of class Matriculador.
+     * Test of pesquisar method, of class MatriculadorArray.
      */
     @Test
     public void testPesquisar() {
-        Matriculador instance = new Matriculador();
+        MatriculadorArray instance = new MatriculadorArray();
         SimpleDateFormat sdf = new SimpleDateFormat("dd-mm-yyyy");
         Date d = null;
         try {
@@ -117,22 +117,22 @@ public class MatriculadorTest {
     }
 
     /**
-     * Test of descarregar method, of class Matriculador.
+     * Test of descarregar method, of class MatriculadorArray.
      */
     @Test
     public void testDescarregar() {
         System.out.println("descarregar");
-        Matriculador instance = new Matriculador();
+        MatriculadorArray instance = new MatriculadorArray();
         instance.descarregar(new DesCarregadorEcra());
     }
 
     /**
-     * Test of numMatriculados method, of class Matriculador.
+     * Test of numMatriculados method, of class MatriculadorArray.
      */
     @Test
     public void testNumMatriculados() {
         System.out.println("numMatriculados");
-        Matriculador instance = new Matriculador();
+        MatriculadorArray instance = new MatriculadorArray();
         instance.inserir(new Registo());
         instance.inserir(new Registo());
         int expResult = 2;
@@ -142,7 +142,7 @@ public class MatriculadorTest {
     
     @Test
     public void testOverInsertion(){
-        Matriculador instance = new Matriculador(2);
+        MatriculadorArray instance = new MatriculadorArray(2);
         assertTrue(instance.inserir(new Registo()));
         assertTrue(instance.inserir(new Registo()));
         assertFalse(instance.inserir(new Registo()));

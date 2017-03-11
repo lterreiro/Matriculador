@@ -170,3 +170,63 @@
 2017-03-10 11:28:30 DEBUG Matriculador:95 - Registo inserido.
 2017-03-10 11:32:08 INFO  Menu:40 - START
 2017-03-10 11:32:12 INFO  Matriculador:183 - Liga��o obtida.
+2017-03-11 11:26:44 INFO  Matriculador:97 - Registo inserido com sucesso.
+2017-03-11 11:26:44 DEBUG Matriculador:107 - Registo inserido.
+2017-03-11 11:26:44 DEBUG Matriculador:120 - Registo encontrado para id 1305436953.
+2017-03-11 11:26:44 INFO  Matriculador:97 - Registo inserido com sucesso.
+2017-03-11 11:26:44 DEBUG Matriculador:107 - Registo inserido.
+2017-03-11 11:26:44 INFO  Matriculador:97 - Registo inserido com sucesso.
+2017-03-11 11:26:44 DEBUG Matriculador:107 - Registo inserido.
+2017-03-11 11:26:44 INFO  Matriculador:97 - Registo inserido com sucesso.
+2017-03-11 11:26:44 DEBUG Matriculador:107 - Registo inserido.
+2017-03-11 11:26:44 INFO  Matriculador:97 - Registo inserido com sucesso.
+2017-03-11 11:26:44 DEBUG Matriculador:107 - Registo inserido.
+2017-03-11 11:26:44 ERROR Matriculador:104 - Não foi possível inserir o registo.
+2017-03-11 11:26:44 INFO  Matriculador:97 - Registo inserido com sucesso.
+2017-03-11 11:26:44 DEBUG Matriculador:107 - Registo inserido.
+2017-03-11 11:26:44 INFO  Matriculador:97 - Registo inserido com sucesso.
+2017-03-11 11:26:44 DEBUG Matriculador:107 - Registo inserido.
+2017-03-11 11:26:44 DEBUG Matriculador:78 - Listagem terminada
+2017-03-11 11:26:44 WARN  Matriculador:90 - Registo inválido. Não inserido.
+2017-03-11 11:26:44 INFO  Matriculador:97 - Registo inserido com sucesso.
+2017-03-11 11:26:44 DEBUG Matriculador:107 - Registo inserido.
+2017-03-11 12:21:16 INFO  MatriculadorArray:76 - Registo inserido com sucesso.
+2017-03-11 12:21:16 DEBUG MatriculadorArray:86 - Registo inserido.
+2017-03-11 12:21:16 DEBUG MatriculadorArray:100 - Registo encontrado para id 1022922573.
+2017-03-11 12:21:16 INFO  MatriculadorArray:76 - Registo inserido com sucesso.
+2017-03-11 12:21:16 DEBUG MatriculadorArray:86 - Registo inserido.
+2017-03-11 12:21:16 INFO  MatriculadorArray:76 - Registo inserido com sucesso.
+2017-03-11 12:21:16 DEBUG MatriculadorArray:86 - Registo inserido.
+2017-03-11 12:21:16 INFO  MatriculadorArray:76 - Registo inserido com sucesso.
+2017-03-11 12:21:16 DEBUG MatriculadorArray:86 - Registo inserido.
+2017-03-11 12:21:16 INFO  MatriculadorArray:76 - Registo inserido com sucesso.
+2017-03-11 12:21:16 DEBUG MatriculadorArray:86 - Registo inserido.
+2017-03-11 12:21:16 ERROR MatriculadorArray:83 - Não foi possível inserir o registo.
+2017-03-11 12:21:16 INFO  MatriculadorArray:76 - Registo inserido com sucesso.
+2017-03-11 12:21:16 DEBUG MatriculadorArray:86 - Registo inserido.
+2017-03-11 12:21:16 INFO  MatriculadorArray:76 - Registo inserido com sucesso.
+2017-03-11 12:21:16 DEBUG MatriculadorArray:86 - Registo inserido.
+2017-03-11 12:21:16 DEBUG MatriculadorArray:56 - Listagem terminada
+2017-03-11 12:21:16 WARN  MatriculadorArray:69 - Registo inválido. Não inserido.
+2017-03-11 12:21:16 INFO  MatriculadorArray:76 - Registo inserido com sucesso.
+2017-03-11 12:21:16 DEBUG MatriculadorArray:86 - Registo inserido.
+2017-03-11 12:25:15 INFO  MatriculadorArray:76 - Registo inserido com sucesso.
+2017-03-11 12:25:15 DEBUG MatriculadorArray:86 - Registo inserido.
+2017-03-11 12:25:15 DEBUG MatriculadorArray:100 - Registo encontrado para id 1104433813.
+2017-03-11 12:25:15 INFO  MatriculadorArray:76 - Registo inserido com sucesso.
+2017-03-11 12:25:15 DEBUG MatriculadorArray:86 - Registo inserido.
+2017-03-11 12:25:15 INFO  MatriculadorArray:76 - Registo inserido com sucesso.
+2017-03-11 12:25:15 DEBUG MatriculadorArray:86 - Registo inserido.
+2017-03-11 12:25:15 INFO  MatriculadorArray:76 - Registo inserido com sucesso.
+2017-03-11 12:25:15 DEBUG MatriculadorArray:86 - Registo inserido.
+2017-03-11 12:25:15 INFO  MatriculadorArray:76 - Registo inserido com sucesso.
+2017-03-11 12:25:15 DEBUG MatriculadorArray:86 - Registo inserido.
+2017-03-11 12:25:15 ERROR MatriculadorArray:83 - Não foi possível inserir o registo.
+2017-03-11 12:25:15 INFO  MatriculadorArray:76 - Registo inserido com sucesso.
+2017-03-11 12:25:15 DEBUG MatriculadorArray:86 - Registo inserido.
+2017-03-11 12:25:15 INFO  MatriculadorArray:76 - Registo inserido com sucesso.
+2017-03-11 12:25:15 DEBUG MatriculadorArray:86 - Registo inserido.
+2017-03-11 12:25:15 DEBUG MatriculadorArray:56 - Listagem terminada
+2017-03-11 12:25:15 WARN  MatriculadorArray:69 - Registo inválido. Não inserido.
+2017-03-11 12:25:15 INFO  MatriculadorArray:76 - Registo inserido com sucesso.
+2017-03-11 12:25:15 DEBUG MatriculadorArray:86 - Registo inserido.

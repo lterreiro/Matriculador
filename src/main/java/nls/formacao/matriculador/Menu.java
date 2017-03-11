@@ -22,7 +22,7 @@ import org.apache.commons.logging.LogFactory;
  */
 public class Menu {
 
-    private final static Matriculador MATRICULADOR = new Matriculador();
+    private final static Matriculador MATRICULADOR = new MatriculadorArray();
 
     private static final Log LOG = LogFactory.getLog(Menu.class);
 
@@ -39,7 +39,7 @@ public class Menu {
         System.out.println("Bem vindo à aplicação de matriculação de alunos!");
         LOG.info("START");
         do {
-            System.out.printf("Estão matriculados %d alunos em %d possiveis.\n", MATRICULADOR.numMatriculados(), Matriculador.MAX_MATRICULAS);
+            System.out.printf("Estão matriculados %d alunos em %d possiveis.\n", MATRICULADOR.numMatriculados(), MatriculadorArray.MAX_MATRICULAS);
             System.out.println("Selecione uma opção: (A)uto Inserir; (I)nserir; (L)istar; (P)esquisar; (D)escarregar; (E)liminar; (S)air");
             opcao = sc.nextLine();
             switch (opcao.toUpperCase()) {
@@ -101,7 +101,7 @@ public class Menu {
         //data nascimento
         registo.setDataNascimento(ui.askInputDateWithFormat("Indique a data nascimento: ", Registo.FORMATO_DATA));
         LOG.debug(String.format("Registo introduzido: %s", registo.toString()));
-        MATRICULADOR.inserirBD(registo);
+        MATRICULADOR.inserir(registo);
         //MATRICULADOR.inserir(registo);
         System.out.println("Registo inserido com sucesso.");
     }
@@ -110,7 +110,7 @@ public class Menu {
      *
      */
     private static void listar() {
-        final String lista = MATRICULADOR.listarBD();
+        final String lista = MATRICULADOR.listar();
         //System.out.println(MATRICULADOR.listar());
         if(lista != null){
          System.out.println(lista);
@@ -182,6 +182,6 @@ public class Menu {
     }
 
     private static void eliminarRegistos() {
-        MATRICULADOR.eliminarRegistos();
+        MATRICULADOR.limpar();
     }
 }
